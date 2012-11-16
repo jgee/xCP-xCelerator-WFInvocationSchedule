@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsEndpoint:RepositoryEndpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:nsEndpoint="http://xcp.emc.com/endpoint" urn="urn:emc:com.emc.xcp.artifact.endpoint:Artifacts/Endpoints/docbase.endpoint" categoryId="com.emc.xcp.artifact.endpoint" name="docbase" label="docbase" docbrokerHostName="xcp20betaCS" repositoryName="xcp" username="dmadmin" password="DM_ENCR_TEXT_V2=AAAAEOOVped8teHWtsLcma9HI734HmsJvrHGSmhcEL8Vy6aoD908mOIQA4X7UHSksxPMNTtSsH3Bcx/mUKxDLcndNnI="/>

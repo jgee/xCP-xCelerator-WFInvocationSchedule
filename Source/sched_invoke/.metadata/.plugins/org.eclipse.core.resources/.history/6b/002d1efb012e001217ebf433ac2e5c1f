@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actionflow:ActionFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionflow="http://www.emc.com/xcp2/2010/actionflow" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" urn="urn:emc:com.emc.xcp.artifact.actionFlow:Artifacts/Action Flows/base_folder.actionflow" categoryId="com.emc.xcp.artifact.actionFlow" name="base_folder" label="base_folder">
+  <primaryElement>
+    <dataModel href="urn:xcp:com.emc.xcp.artifact.folder:Artifacts/Folders/dm_folder.folder#/"/>
+  </primaryElement>
+  <dataActions categoryId="com.emc.xcp.artifact.dataservice.dataaction" name="da_actionflow_base_folder" label="da_actionflow_base_folder">
+    <contract xsi:type="nsDataserviceContract:DataActionContract" href="urn:xcp:com.emc.xcp.artifact.folder:Artifacts/Folders/dm_folder.folder#//@dataActionContracts[name='da_def_create_dm_folder']"/>
+  </dataActions>
+</actionflow:ActionFlow>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<realtime:RealTimeSearch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" xmlns:realtime="http://xcp.emc.com/search/realtime" urn="urn:emc:com.emc.xcp.artifact.search.realtime:Artifacts/Real-time Queries/scheduled_workflows.realtime" categoryId="com.emc.xcp.artifact.search.realtime" name="scheduled_workflows" label="Scheduled Workflows">
+  <datasource categoryId="com.emc.xcp.artifact.dataservice.datasourcecontract" name="scheduled_workflows" label="Scheduled Workflows" implCategoryId="com.emc.xcp.artifact.search.realtime">
+    <outputs xsi:type="nsDataserviceContract:AttributeElement" name="Result Count">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </outputs>
+    <outputs xsi:type="nsDataserviceContract:ArrayElement" name="Results">
+      <item xsi:type="nsDataserviceContract:StructureElement" name="Items"/>
+    </outputs>
+    <primaryElement>
+      <dataModel href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#/"/>
+    </primaryElement>
+  </datasource>
+  <defaultSort ascending="true"/>
+  <dataType xsi:type="nsDatatypes:BusinessObject" href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#/"/>
+  <resultOrientation>
+    <dataRef href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#/"/>
+  </resultOrientation>
+</realtime:RealTimeSearch>

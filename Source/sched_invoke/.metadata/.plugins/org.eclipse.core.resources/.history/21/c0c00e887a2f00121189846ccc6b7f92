@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsDatatypes:Folder xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" urn="urn:emc:com.emc.xcp.artifact.folder:Artifacts/Folders/invocation_schedule.folder" categoryId="com.emc.xcp.artifact.folder" name="invocation_schedule" label="Invocation Schedules" commentable="true">
+  <accessControlPolicy inheritedFromParentFolder="true"/>
+  <defaultFolderPath/>
+  <superType xsi:type="nsDatatypes:Folder" href="urn:xcp:com.emc.xcp.artifact.folder:Artifacts/Folders/dm_folder.folder#/"/>
+</nsDatatypes:Folder>

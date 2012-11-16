@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uitemplate:Page xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:uitemplate="http://www.emc.com/xcp2/2010/uitemplate" urn="urn:emc:com.emc.xcp.artifact.page:Artifacts/Pages/create_schedule_inv.page" categoryId="com.emc.xcp.artifact.page" name="create_schedule_inv" label="Create Schedule Invocation" templateType="application">
+  <title exprStr="Create Schedule Invocation"/>
+  <rootContainer widgetEntry="//@widgetMap[key='root']">
+    <properties name="xcpId" value="root" entry="//@rootContainer/@propertyMap.0"/>
+    <propertyMap key="xcpId" value="//@rootContainer/@properties.0"/>
+    <children xsi:type="uitemplate:Container" componentDefinitionId="xcp_folder_view" parent="//@rootContainer" widgetEntry="//@widgetMap[key='folder_view']">
+      <properties name="title" entry="//@rootContainer/@children.0/@propertyMap.0"/>
+      <properties name="tooltip" value="" entry="//@rootContainer/@children.0/@propertyMap.1"/>
+      <properties name="root" value="" entry="//@rootContainer/@children.0/@propertyMap.2"/>
+      <properties name="isID" value="false" type="BOOLEAN" entry="//@rootContainer/@children.0/@propertyMap.3"/>
+      <properties name="showRootFiles" value="true" type="BOOLEAN" entry="//@rootContainer/@children.0/@propertyMap.4"/>
+      <properties name="width" value="" type="INTEGER" entry="//@rootContainer/@children.0/@propertyMap.5"/>
+      <properties name="minWidth" value="500" type="INTEGER" entry="//@rootContainer/@children.0/@propertyMap.6"/>
+      <properties name="height" value="" type="INTEGER" entry="//@rootContainer/@children.0/@propertyMap.7"/>
+      <properties name="cls" value="" entry="//@rootContainer/@children.0/@propertyMap.8"/>
+      <properties name="hidden" value="" entry="//@rootContainer/@children.0/@propertyMap.9"/>
+      <properties name="xcpId" value="folder_view" entry="//@rootContainer/@children.0/@propertyMap.10"/>
+      <propertyMap key="title" value="//@rootContainer/@children.0/@properties.0"/>
+      <propertyMap key="tooltip" value="//@rootContainer/@children.0/@properties.1"/>
+      <propertyMap key="root" value="//@rootContainer/@children.0/@properties.2"/>
+      <propertyMap key="isID" value="//@rootContainer/@children.0/@properties.3"/>
+      <propertyMap key="showRootFiles" value="//@rootContainer/@children.0/@properties.4"/>
+      <propertyMap key="width" value="//@rootContainer/@children.0/@properties.5"/>
+      <propertyMap key="minWidth" value="//@rootContainer/@children.0/@properties.6"/>
+      <propertyMap key="height" value="//@rootContainer/@children.0/@properties.7"/>
+      <propertyMap key="cls" value="//@rootContainer/@children.0/@properties.8"/>
+      <propertyMap key="hidden" value="//@rootContainer/@children.0/@properties.9"/>
+      <propertyMap key="xcpId" value="//@rootContainer/@children.0/@properties.10"/>
+    </children>
+    <children componentDefinitionId="xcp_button" parent="//@rootContainer" widgetEntry="//@widgetMap[key='button']" dataService="//@dataActions[name='da_def_create_invocation_schedule']">
+      <properties name="text" value="Create Invocation Schedule" entry="//@rootContainer/@children.1/@propertyMap.0"/>
+      <properties xsi:type="uitemplate:ObjectProperty" entry="//@rootContainer/@children.1/@propertyMap.1">
+        <action>
+          <properties name="redirectStyle" value="current" entry="//@rootContainer/@children.1/@properties.1/@action/@propertyMap.0"/>
+          <properties name="showSuccessNotification" value="true" type="BOOLEAN" entry="//@rootContainer/@children.1/@properties.1/@action/@propertyMap.1"/>
+          <properties name="showConfirmation" value="false" type="BOOLEAN" entry="//@rootContainer/@children.1/@properties.1/@action/@propertyMap.2"/>
+          <properties name="actionType" value="create" entry="//@rootContainer/@children.1/@properties.1/@action/@propertyMap.3"/>
+          <propertyMap key="redirectStyle" value="//@rootContainer/@children.1/@properties.1/@action/@properties.0"/>
+          <propertyMap key="showSuccessNotification" value="//@rootContainer/@children.1/@properties.1/@action/@properties.1"/>
+          <propertyMap key="showConfirmation" value="//@rootContainer/@children.1/@properties.1/@action/@properties.2"/>
+          <propertyMap key="actionType" value="//@rootContainer/@children.1/@properties.1/@action/@properties.3"/>
+        </action>
+      </properties>
+      <properties name="actionInstanceId" value="" entry="//@rootContainer/@children.1/@propertyMap.2"/>
+      <properties name="disabled" value="" entry="//@rootContainer/@children.1/@propertyMap.3"/>
+      <properties name="hidden" value="" entry="//@rootContainer/@children.1/@propertyMap.4"/>
+      <properties name="xcpId" value="button" entry="//@rootContainer/@children.1/@propertyMap.5"/>
+      <propertyMap key="text" value="//@rootContainer/@children.1/@properties.0"/>
+      <propertyMap key="action" value="//@rootContainer/@children.1/@properties.1"/>
+      <propertyMap key="actionInstanceId" value="//@rootContainer/@children.1/@properties.2"/>
+      <propertyMap key="disabled" value="//@rootContainer/@children.1/@properties.3"/>
+      <propertyMap key="hidden" value="//@rootContainer/@children.1/@properties.4"/>
+      <propertyMap key="xcpId" value="//@rootContainer/@children.1/@properties.5"/>
+    </children>
+    <children componentDefinitionId="xcp_button" parent="//@rootContainer" widgetEntry="//@widgetMap[key='edit_button']" dataService="//@dataActions[name='da_def_update_invocation_schedule']">
+      <properties name="text" value="Edit Invocation Schedule" entry="//@rootContainer/@children.2/@propertyMap.0"/>
+      <properties xsi:type="uitemplate:ObjectProperty" entry="//@rootContainer/@children.2/@propertyMap.1">
+        <action>
+          <properties name="defaultConfirmationPrompt" value="Are you sure you want to update the item?" entry="//@rootContainer/@children.2/@properties.1/@action/@propertyMap.0"/>
+          <properties name="showConfirmation" value="true" type="BOOLEAN" entry="//@rootContainer/@children.2/@properties.1/@action/@propertyMap.1"/>
+          <properties name="redirectStyle" value="current" entry="//@rootContainer/@children.2/@properties.1/@action/@propertyMap.2"/>
+          <properties name="showSuccessNotification" value="true" type="BOOLEAN" entry="//@rootContainer/@children.2/@properties.1/@action/@propertyMap.3"/>
+          <properties name="actionType" value="update" entry="//@rootContainer/@children.2/@properties.1/@action/@propertyMap.4"/>
+          <propertyMap key="defaultConfirmationPrompt" value="//@rootContainer/@children.2/@properties.1/@action/@properties.0"/>
+          <propertyMap key="showConfirmation" value="//@rootContainer/@children.2/@properties.1/@action/@properties.1"/>
+          <propertyMap key="redirectStyle" value="//@rootContainer/@children.2/@properties.1/@action/@properties.2"/>
+          <propertyMap key="showSuccessNotification" value="//@rootContainer/@children.2/@properties.1/@action/@properties.3"/>
+          <propertyMap key="actionType" value="//@rootContainer/@children.2/@properties.1/@action/@properties.4"/>
+        </action>
+      </properties>
+      <properties name="actionInstanceId" value="" entry="//@rootContainer/@children.2/@propertyMap.2"/>
+      <properties name="disabled" value="" entry="//@rootContainer/@children.2/@propertyMap.3"/>
+      <properties name="hidden" value="" entry="//@rootContainer/@children.2/@propertyMap.4"/>
+      <properties name="xcpId" value="edit_button" entry="//@rootContainer/@children.2/@propertyMap.5"/>
+      <propertyMap key="text" value="//@rootContainer/@children.2/@properties.0"/>
+      <propertyMap key="action" value="//@rootContainer/@children.2/@properties.1"/>
+      <propertyMap key="actionInstanceId" value="//@rootContainer/@children.2/@properties.2"/>
+      <propertyMap key="disabled" value="//@rootContainer/@children.2/@properties.3"/>
+      <propertyMap key="hidden" value="//@rootContainer/@children.2/@properties.4"/>
+      <propertyMap key="xcpId" value="//@rootContainer/@children.2/@properties.5"/>
+    </children>
+  </rootContainer>
+  <widgetMap key="root" value="//@rootContainer"/>
+  <widgetMap key="button" value="//@rootContainer/@children.1"/>
+  <widgetMap key="folder_view" value="//@rootContainer/@children.0"/>
+  <widgetMap key="edit_button" value="//@rootContainer/@children.2"/>
+  <dataActions categoryId="com.emc.xcp.artifact.dataservice.dataaction" name="da_def_create_invocation_schedule" label="Create invocation_schedule" invokeOnPageLoad="false">
+    <inputMappings name="configuration_name">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="frequency_picklist">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="is_being_processed">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="is_active">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="last_workflow_started">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="next_invocation_time">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="package_delivery">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="package_query">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="process_name">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="object_name">
+      <expression/>
+    </inputMappings>
+    <contract xsi:type="nsDataserviceContract:DataActionContract" href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#//@dataActionContracts[name='da_def_create_invocation_schedule']"/>
+  </dataActions>
+  <dataActions categoryId="com.emc.xcp.artifact.dataservice.dataaction" name="da_def_update_invocation_schedule" label="Update invocation_schedule" invokeOnPageLoad="false">
+    <inputMappings name="configuration_name">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="frequency_picklist">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="is_being_processed">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="is_active">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="last_workflow_started">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="next_invocation_time">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="package_delivery">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="package_query">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="process_name">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="id">
+      <expression/>
+    </inputMappings>
+    <inputMappings name="object_name">
+      <expression/>
+    </inputMappings>
+    <contract xsi:type="nsDataserviceContract:DataActionContract" href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#//@dataActionContracts[name='da_def_update_invocation_schedule']"/>
+  </dataActions>
+</uitemplate:Page>

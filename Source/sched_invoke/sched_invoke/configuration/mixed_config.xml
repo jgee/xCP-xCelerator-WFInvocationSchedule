@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ApplicationConfiguration description="" version="1.0.0" namespace="emc" application-name="sched_invoke">
+    <configuration id="com.emc.xcp.artifact.endpoint" namespace="emc" name="docbase" type="RepositoryEndpoint">
+        <property name="description"></property>
+        <property name="docbrokerHostName">xcp20betaCS</property>
+        <property name="docbrokerPort">1489</property>
+        <property name="repositoryName">xcp</property>
+        <property name="username">emcadmin</property>
+        <property name="password">DM_ENCR_TEXT_V2=AAAAEKNYXNpdFTcnIjwMYtrS3vP4xY3ygsPKB4vRk/fN2cX8QmYCHdIKCDS4VBG7qJxS6UBmVZ6caBticMF8BQPN10Y=</property>
+        <property name="domain">xcp20betaCS</property>
+    </configuration>
+</ApplicationConfiguration>

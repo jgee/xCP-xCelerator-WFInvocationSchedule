@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uitemplate:Page xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uitemplate="http://www.emc.com/xcp2/2010/uitemplate" urn="urn:emc:com.emc.xcp.artifact.page:Artifacts/Pages/create_invocation_s.page" categoryId="com.emc.xcp.artifact.page" name="create_invocation_s" label="Create Invocation Schedule" templateType="business_object">
+  <title exprStr="Create Invocation Schedule"/>
+  <rootContainer widgetEntry="//@widgetMap[key='root']">
+    <properties name="xcpId" value="root" entry="//@rootContainer/@propertyMap.0"/>
+    <propertyMap key="xcpId" value="//@rootContainer/@properties.0"/>
+  </rootContainer>
+  <widgetMap key="root" value="//@rootContainer"/>
+  <primaryModel href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#/"/>
+</uitemplate:Page>

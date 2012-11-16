@@ -1,0 +1,152 @@
+!SESSION 2012-11-13 18:20:47.525 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_32
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data @noDefault
+
+!ENTRY org.eclipse.ui.views.properties.tabbed 4 4 2012-11-13 18:55:09.353
+!MESSAGE Contributor com.emc.xcp.builder.picklist.ui.PicklistEditor cannot be created.
+
+!ENTRY org.eclipse.osgi 2 1 2012-11-13 19:43:23.358
+!MESSAGE NLS missing message: ThisIsAnUnknownLabel in: com.emc.xcp.artifact.search.editor.messages
+
+!ENTRY org.eclipse.osgi 2 1 2012-11-13 19:43:23.358
+!MESSAGE NLS missing message: TestPage_btnCheckButton_text in: com.emc.xcp.artifact.search.editor.messages
+!SESSION 2012-11-14 18:22:04.147 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_32
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data @noDefault
+
+!ENTRY org.eclipse.osgi 2 1 2012-11-14 18:22:32.289
+!MESSAGE NLS missing message: ThisIsAnUnknownLabel in: com.emc.xcp.artifact.search.editor.messages
+
+!ENTRY org.eclipse.osgi 2 1 2012-11-14 18:22:32.289
+!MESSAGE NLS missing message: TestPage_btnCheckButton_text in: com.emc.xcp.artifact.search.editor.messages
+
+!ENTRY org.eclipse.ui.views.properties.tabbed 4 4 2012-11-14 19:04:11.390
+!MESSAGE Contributor com.emc.xcp.artifact.endpoint.ui.EndPointEditor cannot be created.
+!SESSION 2012-11-15 08:54:25.589 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_32
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data @noDefault
+
+!ENTRY org.eclipse.osgi 2 1 2012-11-15 08:54:49.825
+!MESSAGE NLS missing message: ThisIsAnUnknownLabel in: com.emc.xcp.artifact.search.editor.messages
+
+!ENTRY org.eclipse.osgi 2 1 2012-11-15 08:54:49.825
+!MESSAGE NLS missing message: TestPage_btnCheckButton_text in: com.emc.xcp.artifact.search.editor.messages
+
+!ENTRY org.eclipse.ui.views.properties.tabbed 4 4 2012-11-15 08:55:21.552
+!MESSAGE Contributor com.emc.xcp.builder.picklist.ui.PicklistEditor cannot be created.
+
+!ENTRY org.eclipse.ui.views.properties.tabbed 4 4 2012-11-15 08:58:39.005
+!MESSAGE Contributor com.emc.xcp.artifact.endpoint.ui.EndPointEditor cannot be created.
+!SESSION 2012-11-15 11:00:14.858 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_32
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data @noDefault
+
+!ENTRY org.eclipse.osgi 2 1 2012-11-15 11:00:44.430
+!MESSAGE NLS missing message: ThisIsAnUnknownLabel in: com.emc.xcp.artifact.search.editor.messages
+
+!ENTRY org.eclipse.osgi 2 1 2012-11-15 11:00:44.430
+!MESSAGE NLS missing message: TestPage_btnCheckButton_text in: com.emc.xcp.artifact.search.editor.messages
+
+!ENTRY org.eclipse.ui.views.properties.tabbed 4 4 2012-11-15 11:15:31.739
+!MESSAGE Contributor com.emc.xcp.artifact.endpoint.ui.EndPointEditor cannot be created.
+
+!ENTRY org.eclipse.ui.views.properties.tabbed 4 4 2012-11-15 11:22:28.747
+!MESSAGE Contributor com.emc.xcp.artifact.endpoint.ui.EndPointEditor cannot be created.
+!SESSION 2012-11-15 11:22:53.809 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_32
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data @noDefault
+
+!ENTRY org.eclipse.osgi 2 1 2012-11-15 11:23:15.982
+!MESSAGE NLS missing message: ThisIsAnUnknownLabel in: com.emc.xcp.artifact.search.editor.messages
+
+!ENTRY org.eclipse.osgi 2 1 2012-11-15 11:23:15.982
+!MESSAGE NLS missing message: TestPage_btnCheckButton_text in: com.emc.xcp.artifact.search.editor.messages
+
+!ENTRY org.eclipse.ui.views.properties.tabbed 4 4 2012-11-15 11:23:18.342
+!MESSAGE Contributor com.emc.xcp.artifact.endpoint.ui.EndPointEditor cannot be created.
+!SESSION 2012-11-15 11:35:56.456 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_32
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data @noDefault
+
+!ENTRY org.eclipse.osgi 2 1 2012-11-15 11:36:33.953
+!MESSAGE NLS missing message: ThisIsAnUnknownLabel in: com.emc.xcp.artifact.search.editor.messages
+
+!ENTRY org.eclipse.osgi 2 1 2012-11-15 11:36:33.953
+!MESSAGE NLS missing message: TestPage_btnCheckButton_text in: com.emc.xcp.artifact.search.editor.messages
+
+!ENTRY org.eclipse.ui.views.properties.tabbed 4 4 2012-11-15 11:36:36.297
+!MESSAGE Contributor com.emc.xcp.artifact.endpoint.ui.EndPointEditor cannot be created.
+
+!ENTRY org.eclipse.ui.views.properties.tabbed 4 4 2012-11-15 13:52:42.770
+!MESSAGE Contributor com.emc.xcp.builder.picklist.ui.PicklistEditor cannot be created.
+
+!ENTRY org.eclipse.ui.views.properties.tabbed 4 4 2012-11-15 13:53:16.881
+!MESSAGE Contributor com.emc.xcp.builder.picklist.ui.PicklistEditor cannot be created.
+!SESSION 2012-11-15 14:23:41.614 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_32
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data @noDefault
+
+!ENTRY org.eclipse.osgi 2 1 2012-11-15 14:24:06.224
+!MESSAGE NLS missing message: ThisIsAnUnknownLabel in: com.emc.xcp.artifact.search.editor.messages
+
+!ENTRY org.eclipse.osgi 2 1 2012-11-15 14:24:06.224
+!MESSAGE NLS missing message: TestPage_btnCheckButton_text in: com.emc.xcp.artifact.search.editor.messages
+
+!ENTRY org.eclipse.osgi 2 1 2012-11-15 15:34:50.136
+!MESSAGE NLS unused message: ContextMenuEditorPalette_SeperatorActions in: internal.com.emc.xcp.artifact.contextmenu.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2012-11-15 15:34:50.136
+!MESSAGE NLS unused message: ContextMenuEditorPalette_PaletteLabel in: internal.com.emc.xcp.artifact.contextmenu.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2012-11-15 15:34:50.136
+!MESSAGE NLS missing message: UNKNOWN_ERROR_MSG in: internal.com.emc.xcp.artifact.contextmenu.ui.messages
+
+!ENTRY org.eclipse.jface 2 0 2012-11-15 17:26:19.626
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2012-11-15 17:26:19.626
+!MESSAGE A conflict occurred for DEL:
+Binding(DEL,
+	ParameterizedCommand(Command(com.emc.xcp.builder.ui.delete,Delete,
+		,
+		Category(com.emc.xcp.builder.ui.commands,xCP Builder,null,true),
+		internal.com.emc.xcp.builder.ui.commands.DeleteArtifactContainerHandler@163133c,
+		[Lorg.eclipse.ui.internal.commands.Parameter;@183d31c,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.emc.xcp.builder.navigation.context,,,system)
+Binding(DEL,
+	ParameterizedCommand(Command(com.emc.xcp.builder.deleteProject,Delete,
+		,
+		Category(com.emc.xcp.builder.projectCommands,Project Commands,null,true),
+		internal.com.emc.xcp.builder.ui.home.commands.DeleteProjectCommandHandler,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.emc.xcp.builder.application.ui.editorContext,,,system)
+Binding(DEL,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.delete,Delete,
+		Delete the selection,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)

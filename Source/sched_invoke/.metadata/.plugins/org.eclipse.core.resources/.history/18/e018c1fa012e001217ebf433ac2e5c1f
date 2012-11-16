@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uitemplate:Page xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uitemplate="http://www.emc.com/xcp2/2010/uitemplate" urn="urn:emc:com.emc.xcp.artifact.page:Artifacts/Pages/edit_base_content.page" categoryId="com.emc.xcp.artifact.page" name="edit_base_content" label="Edit Base Content" templateType="document" templateScope="INSTANCE">
+  <title exprStr="Edit Base Content"/>
+  <rootContainer widgetEntry="//@widgetMap[key='root']">
+    <properties name="xcpId" value="root" entry="//@rootContainer/@propertyMap.0"/>
+    <propertyMap key="xcpId" value="//@rootContainer/@properties.0"/>
+  </rootContainer>
+  <widgetMap key="root" value="//@rootContainer"/>
+  <primaryModel href="urn:xcp:com.emc.xcp.artifact.doc:Artifacts/Content/dm_document.content#/"/>
+</uitemplate:Page>

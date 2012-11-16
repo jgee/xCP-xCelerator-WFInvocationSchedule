@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Require-Bundle: xcpcore, xcpcommons
+Bundle-Version: 1.0.0
+Bundle-Name: sched_invoke
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: sched_invoke
+NAMESPACE: emc
+

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsEndpoint:RepositoryEndpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:nsEndpoint="http://xcp.emc.com/endpoint" urn="urn:emc:com.emc.xcp.artifact.endpoint:Artifacts/Endpoints/repository.endpoint" categoryId="com.emc.xcp.artifact.endpoint" name="repository" label="Repository"/>

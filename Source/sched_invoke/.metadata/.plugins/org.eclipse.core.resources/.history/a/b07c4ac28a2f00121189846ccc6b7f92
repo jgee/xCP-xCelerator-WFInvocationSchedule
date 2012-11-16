@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actionflow:ActionFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actionflow="http://www.emc.com/xcp2/2010/actionflow" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" urn="urn:emc:com.emc.xcp.artifact.actionFlow:Artifacts/Action Flows/demo_workflow_manua.actionflow" categoryId="com.emc.xcp.artifact.actionFlow" name="demo_workflow_manua" label="demo_workflow_manua">
+  <primaryElement>
+    <dataModel href="urn:emc:com.emc.ide.artifact.process:Artifacts/Processes/demo_workflow.process#//@activities[name='Manual%20task']/@taskContract"/>
+  </primaryElement>
+  <dataActions categoryId="com.emc.xcp.artifact.dataservice.dataaction" name="da_actionflow_demo_workflow_manua" label="da_actionflow_demo_workflow_manua">
+    <contract xsi:type="nsDataserviceContract:DataActionContract" href="urn:emc:com.emc.ide.artifact.process:Artifacts/Processes/demo_workflow.process#//@activities[name='Manual%20task']/@taskContract/@dataServiceContracts[name='da_def_delegate_demo_workflow_manual_task']"/>
+  </dataActions>
+</actionflow:ActionFlow>

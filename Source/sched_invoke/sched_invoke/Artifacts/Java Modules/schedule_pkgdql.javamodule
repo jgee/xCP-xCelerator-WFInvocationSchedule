@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsJavaModule:JavaModule xmlns:nsJavaModule="http://xcp.emc.com/javamodule" urn="urn:xcp:com.emc.xcp.artifact.javamodule.category:Artifacts/Java Modules/schedule_pkgdql.javamodule" categoryId="com.emc.xcp.artifact.javamodule.category" name="invoke_pkgdql" label="Invocation Scheduler: PKGDQL" implementationClass="com.emc.community.xcelerators.dql.impl.ConfigurableDqlExecutorImpl">
+
+<implementationJars contentPath="content/modules/invoke.jar"/>
+
+</nsJavaModule:JavaModule>

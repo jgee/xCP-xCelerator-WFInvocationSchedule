@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actionflow:UIStep xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:actionflow="http://www.emc.com/xcp2/2010/actionflow" urn="urn:emc:com.emc.xcp.artifact.uistep:Artifacts/UI Steps/base_folder_step_1.uistep" categoryId="com.emc.xcp.artifact.uistep" name="base_folder_step_1" label="Step 1" templateType="uistep">
+  <rootContainer widgetEntry="//@widgetMap[key='root']">
+    <properties name="xcpId" value="root" entry="//@rootContainer/@propertyMap.0"/>
+    <propertyMap key="xcpId" value="//@rootContainer/@properties.0"/>
+  </rootContainer>
+  <widgetMap key="root" value="//@rootContainer"/>
+</actionflow:UIStep>

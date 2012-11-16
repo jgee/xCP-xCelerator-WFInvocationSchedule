@@ -1,0 +1,228 @@
+{
+  "padding" : "0",
+  "border" : false,
+  "pageTitle" : "${_UI_Page_emc_edit_inovcation_sch_title}",
+  "xtype" : "xcp_form",
+  "modelImmutable" : true,
+  "models" : [ "emc_invocation_schedule" ],
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "da_def_create_invocation_schedule_button",
+      "redirectStyle" : "current",
+      "showSuccessNotification" : true,
+      "showConfirmation" : false,
+      "actionType" : "create",
+      "actionModel" : "emc_da_def_create_invocation_schedule",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "next_invocation_time",
+          "setterFunName" : "setInputProperty",
+          "etype" : "emc_edit_inovcation_sch_da_def_create_invocation_schedule_next_invocation_time_1",
+          "events" : ["next_invocation_time.change" ]
+        }, {
+          "propertyId" : "frequency_picklist",
+          "setterFunName" : "setInputProperty",
+          "etype" : "emc_edit_inovcation_sch_da_def_create_invocation_schedule_frequency_picklist_1",
+          "events" : ["frequency_picklist.change" ]
+        }, {
+          "propertyId" : "configuration_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "emc_edit_inovcation_sch_da_def_create_invocation_schedule_configuration_name_1",
+          "events" : ["configuration_name.change" ]
+        }, {
+          "propertyId" : "is_being_processed",
+          "setterFunName" : "setInputProperty",
+          "etype" : "emc_edit_inovcation_sch_da_def_create_invocation_schedule_is_being_processed_1",
+          "events" : ["is_being_processed.change" ]
+        }, {
+          "propertyId" : "last_workflow_started",
+          "setterFunName" : "setInputProperty",
+          "etype" : "emc_edit_inovcation_sch_da_def_create_invocation_schedule_last_workflow_started_1",
+          "events" : ["last_workflow_started.change" ]
+        }, {
+          "propertyId" : "is_active",
+          "setterFunName" : "setInputProperty",
+          "etype" : "emc_edit_inovcation_sch_da_def_create_invocation_schedule_is_active_1",
+          "events" : ["is_active.change" ]
+        }, {
+          "propertyId" : "package_delivery",
+          "setterFunName" : "setInputProperty",
+          "etype" : "emc_edit_inovcation_sch_da_def_create_invocation_schedule_package_delivery_1",
+          "events" : ["package_delivery.change" ]
+        } ],
+        "mapping" : {
+          "next_invocation_time" : ["next_invocation_time" ],
+          "frequency_picklist" : ["frequency_picklist" ],
+          "configuration_name" : ["configuration_name" ],
+          "is_being_processed" : ["is_being_processed" ],
+          "last_workflow_started" : ["last_workflow_started" ],
+          "is_active" : ["is_active" ],
+          "package_delivery" : ["package_delivery" ]
+        }
+      } ]
+    }, {
+      "xcpId" : "query_for_processes_initiate_staless_ds",
+      "actionModel" : "emc_query_for_processes_initiate_staless_ds_outputs",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ ],
+        "mapping" : {
+        }
+      } ],
+      "actionType" : "datasource",
+      "autoLoad" : false,
+      "invokerEvents" : ["emc_invocation_schedule.change","emc_invocation_schedule.load" ],
+      "outputType" : "Array"
+    } ]
+  }, {
+    "xcpId" : "column_box",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapsed" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnvbox",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "100%",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "configuration_name",
+        "xtype" : "xcp_text_input",
+        "fieldLabel" : "${_UI_Page_emc_edit_inovcation_sch_configuration_name_fieldLabel}",
+        "hstretch" : true,
+        "valueType" : "STRING",
+        "name" : "emc_invocation_schedule@configuration_name"
+      }, {
+        "xcpId" : "process_name",
+        "xtype" : "xcp_dropdown_list",
+        "fieldLabel" : "${_UI_Page_emc_edit_inovcation_sch_process_name_fieldLabel}",
+        "valueField" : "processes",
+        "displayField" : "processes",
+        "store" : "query_for_processes_initiate_staless_ds",
+        "valueType" : "STRING",
+        "name" : "emc_invocation_schedule@process_name"
+      }, {
+        "xcpId" : "next_invocation_time",
+        "xtype" : "xcp_date_time_input",
+        "fieldLabel" : "${_UI_Page_emc_edit_inovcation_sch_next_invocation_time_fieldLabel}",
+        "hstretch" : true,
+        "format" : {
+          "xtype" : "xcp_datetime_formatter",
+          "dateFormat" : "short",
+          "timeFormat" : "short",
+          "dateStyle" : "datetime"
+        },
+        "valueType" : "DATETIME",
+        "name" : "emc_invocation_schedule@next_invocation_time"
+      }, {
+        "xcpId" : "frequency_picklist",
+        "xtype" : "xcp_dropdown_list",
+        "fieldLabel" : "${_UI_Page_emc_edit_inovcation_sch_frequency_picklist_fieldLabel}",
+        "store" : "xcp.picklist.emc_frequency_picklist",
+        "valueType" : "xcp.picklist.emc_frequency_picklist",
+        "name" : "emc_invocation_schedule@frequency_picklist"
+      }, {
+        "xcpId" : "is_active",
+        "xtype" : "xcp_checkbox",
+        "fieldLabel" : "${_UI_Page_emc_edit_inovcation_sch_is_active_fieldLabel}",
+        "valueType" : "BOOLEAN",
+        "name" : "emc_invocation_schedule@is_active"
+      }, {
+        "xcpId" : "package_delivery",
+        "xtype" : "xcp_dropdown_list",
+        "fieldLabel" : "${_UI_Page_emc_edit_inovcation_sch_package_delivery_fieldLabel}",
+        "store" : "xcp.picklist.emc_package_delivery",
+        "valueType" : "xcp.picklist.emc_package_delivery",
+        "name" : "emc_invocation_schedule@package_delivery"
+      }, {
+        "xcpId" : "rich_text",
+        "xtype" : "xcp_rich_text",
+        "html" : "${_UI_Page_emc_edit_inovcation_sch_rich_text_html}"
+      }, {
+        "xcpId" : "text_area",
+        "xtype" : "xcp_text_area",
+        "fieldLabel" : "${_UI_Page_emc_edit_inovcation_sch_text_area_fieldLabel}",
+        "hstretch" : true,
+        "valueType" : "STRING",
+        "height" : 100,
+        "name" : "emc_invocation_schedule@package_query",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "hidden",
+            "setterFunName" : "setHidden",
+            "etype" : "emc_edit_inovcation_sch_text_area_hidden_1",
+            "events" : ["package_delivery.change" ]
+          } ]
+        } ]
+      }, {
+        "xcpId" : "last_workflow_started",
+        "xtype" : "xcp_text_input",
+        "fieldLabel" : "${_UI_Page_emc_edit_inovcation_sch_last_workflow_started_fieldLabel}",
+        "hstretch" : true,
+        "valueType" : "STRING",
+        "name" : "emc_invocation_schedule@last_workflow_started",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "hidden",
+            "setterFunName" : "setHidden",
+            "etype" : "emc_edit_inovcation_sch_last_workflow_started_hidden_1"
+          } ]
+        } ]
+      }, {
+        "xcpId" : "is_being_processed",
+        "xtype" : "xcp_checkbox",
+        "fieldLabel" : "${_UI_Page_emc_edit_inovcation_sch_is_being_processed_fieldLabel}",
+        "valueType" : "BOOLEAN",
+        "name" : "emc_invocation_schedule@is_being_processed",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "hidden",
+            "setterFunName" : "setHidden",
+            "etype" : "emc_edit_inovcation_sch_is_being_processed_hidden_1"
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "xcpId" : "column_box1",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapsed" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnhbox",
+      "xtype" : "xcp_columnhbox",
+      "orientation" : "Horizontal",
+      "width" : "100%",
+      "overflow_x" : "hidden",
+      "labelWidth" : 50,
+      "defaultMargins" : "5",
+      "labelAlign" : "left",
+      "halign" : "right",
+      "valign" : "top",
+      "items" : [ {
+        "xcpId" : "button",
+        "xtype" : "xcp_button",
+        "text" : "${_UI_Page_emc_edit_inovcation_sch_button_text}",
+        "actionInstanceId" : "da_def_create_invocation_schedule_button"
+      } ]
+    } ]
+  } ]
+}

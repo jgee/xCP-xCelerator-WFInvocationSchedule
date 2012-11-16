@@ -1,0 +1,62 @@
+{
+  "padding" : "0",
+  "border" : false,
+  "pageTitle" : "${_UI_Page_emc_create_schedule_inv_title}",
+  "xtype" : "xcp_form",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "da_def_update_invocation_schedule_edit_button",
+      "defaultConfirmationPrompt" : "Are you sure you want to update the item?",
+      "showConfirmation" : true,
+      "redirectStyle" : "current",
+      "showSuccessNotification" : true,
+      "actionType" : "update",
+      "actionModel" : "emc_da_def_update_invocation_schedule",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ ],
+        "mapping" : {
+        }
+      } ]
+    }, {
+      "xcpId" : "da_def_create_invocation_schedule_button",
+      "redirectStyle" : "current",
+      "showSuccessNotification" : true,
+      "showConfirmation" : false,
+      "actionType" : "create",
+      "actionModel" : "emc_da_def_create_invocation_schedule",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ ],
+        "mapping" : {
+        }
+      } ]
+    } ]
+  }, {
+    "xcpId" : "folder_view",
+    "xtype" : "xcp_folder_view",
+    "title" : "${_UI_Page_emc_create_schedule_inv_folder_view_title}",
+    "isID" : false,
+    "showRootFiles" : true,
+    "minWidth" : 500,
+    "plugins" : [ {
+      "ptype" : "xcp_expression_properties",
+      "expression" : [ {
+        "propertyId" : "root",
+        "setterFunName" : "setFolderRoot",
+        "etype" : "emc_create_schedule_inv_folder_view_root_1"
+      } ]
+    } ]
+  }, {
+    "xcpId" : "button",
+    "xtype" : "xcp_button",
+    "text" : "${_UI_Page_emc_create_schedule_inv_button_text}",
+    "actionInstanceId" : "da_def_create_invocation_schedule_button"
+  }, {
+    "xcpId" : "edit_button",
+    "xtype" : "xcp_button",
+    "text" : "${_UI_Page_emc_create_schedule_inv_edit_button_text}",
+    "actionInstanceId" : "da_def_update_invocation_schedule_edit_button"
+  } ]
+}

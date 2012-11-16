@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<realtime:RealTimeSearch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsCommon="http://xcp.emc.com/common" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" xmlns:nsPicklist="http://xcp.emc.com/picklist" xmlns:realtime="http://xcp.emc.com/search/realtime" urn="urn:emc:com.emc.xcp.artifact.search.realtime:Artifacts/Real-time Queries/scheduled_workflows.realtime" categoryId="com.emc.xcp.artifact.search.realtime" name="scheduled_workflows" label="Scheduled Workflows">
+  <datasource categoryId="com.emc.xcp.artifact.dataservice.datasourcecontract" name="scheduled_workflows" label="Scheduled Workflows" implCategoryId="com.emc.xcp.artifact.search.realtime">
+    <outputs xsi:type="nsDataserviceContract:AttributeElement" name="Result Count">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </outputs>
+    <outputs xsi:type="nsDataserviceContract:ArrayElement" name="Results">
+      <item xsi:type="nsDataserviceContract:StructureElement" name="Items">
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="process_name" label="Process Name">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="next_invocation_time" label="Next Invocation Time">
+          <attributeType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="is_active" label="Is Active">
+          <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="package_delivery" label="Package Delivery">
+          <attributeType xsi:type="nsPicklist:PickListType">
+            <pickList href="urn:emc:com.emc.xcp.artifact.picklist:Artifacts/Picklists/package_delivery.picklist#/"/>
+          </attributeType>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="package_query" label="Package Query">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="id" label="Object ID" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="r_object_type" label="Object type" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+      </item>
+    </outputs>
+    <primaryElement>
+      <dataModel href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#/"/>
+    </primaryElement>
+  </datasource>
+  <predefinedInputs xsi:type="nsCommon:BooleanPredefinedInput" operator="com.emc.xcp.model.common.BooleanOperator:EQUAL">
+    <value exprStr="true"/>
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#//@attributes[name='is_active']"/>
+    </contextSelection>
+  </predefinedInputs>
+  <predefinedInputs xsi:type="nsCommon:DatePredefinedInput" operator="com.emc.xcp.model.common.DateOperator:LESS_THAN">
+    <value exprStr="now()"/>
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#//@attributes[name='next_invocation_time']"/>
+    </contextSelection>
+  </predefinedInputs>
+  <columns label="Process Name">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#//@attributes[name='process_name']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Next Invocation Time">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#//@attributes[name='next_invocation_time']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Is Active">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#//@attributes[name='is_active']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Package Delivery">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#//@attributes[name='package_delivery']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Package Query">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#/"/>
+      </parentRef>
+      <dataRef href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#//@attributes[name='package_query']"/>
+    </contextSelection>
+  </columns>
+  <defaultSort ascending="true"/>
+  <dataType xsi:type="nsDatatypes:BusinessObject" href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#/"/>
+  <resultOrientation>
+    <dataRef href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#/"/>
+  </resultOrientation>
+</realtime:RealTimeSearch>

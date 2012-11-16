@@ -1,0 +1,131 @@
+{
+"_xcpMemberTypes":{
+"model": "xcp.picklist.models.StringModel",
+"data": [{
+"value": "user",
+"label": "${_UI_PickList__xcpMemberTypes_user}"
+},
+{
+"value": "group",
+"label": "${_UI_PickList__xcpMemberTypes_group}"
+}]
+},
+"xcp_taskstatuspiclkist":{
+"model": "xcp.picklist.models.StringModel",
+"data": [{
+"value": "dormant",
+"label": "${_UI_PickList_xcp_taskstatuspiclkist_dormant}"
+},
+{
+"value": "acquired",
+"label": "${_UI_PickList_xcp_taskstatuspiclkist_acquired}"
+},
+{
+"value": "ready",
+"label": "${_UI_PickList_xcp_taskstatuspiclkist_ready}"
+},
+{
+"value": "paused",
+"label": "${_UI_PickList_xcp_taskstatuspiclkist_paused}"
+}]
+},
+"xcp_task_state":{
+"model": "xcp.picklist.models.IntegerModel",
+"data": [{
+"value": 0,
+"label": "${_UI_PickList_xcp_task_state_0}"
+},
+{
+"value": 1,
+"label": "${_UI_PickList_xcp_task_state_1}"
+},
+{
+"value": 2,
+"label": "${_UI_PickList_xcp_task_state_2}"
+},
+{
+"value": 3,
+"label": "${_UI_PickList_xcp_task_state_3}"
+},
+{
+"value": 4,
+"label": "${_UI_PickList_xcp_task_state_4}"
+},
+{
+"value": 5,
+"label": "${_UI_PickList_xcp_task_state_5}"
+},
+{
+"value": 6,
+"label": "${_UI_PickList_xcp_task_state_6}"
+},
+{
+"value": 7,
+"label": "${_UI_PickList_xcp_task_state_7}"
+}]
+},
+"xcp_wq_view_filter":{
+"model": "xcp.picklist.models.StringModel",
+"data": [{
+"value": "SHOW_ALL_TASKS",
+"label": "${_UI_PickList_xcp_wq_view_filter_SHOW_ALL_TASKS}"
+},
+{
+"value": "SHOW_PROCESSOR_ELIGIBLE_AND_OWNED_TASKS",
+"label": "${_UI_PickList_xcp_wq_view_filter_SHOW_PROCESSOR_ELIGIBLE_AND_OWNED_TASKS}"
+},
+{
+"value": "SHOW_UNASSIGNED_TASKS",
+"label": "${_UI_PickList_xcp_wq_view_filter_SHOW_UNASSIGNED_TASKS}"
+},
+{
+"value": "SHOW_PROCESSOR_ELIGIBLE_TASKS",
+"label": "${_UI_PickList_xcp_wq_view_filter_SHOW_PROCESSOR_ELIGIBLE_TASKS}"
+}]
+},
+"emc_frequency_picklist":{
+"model": "xcp.picklist.models.StringModel",
+"data": [{
+"value": "MIN",
+"label": "${_UI_PickList_emc_frequency_picklist_MIN}"
+},
+{
+"value": "HOUR",
+"label": "${_UI_PickList_emc_frequency_picklist_HOUR}"
+},
+{
+"value": "DAY",
+"label": "${_UI_PickList_emc_frequency_picklist_DAY}"
+},
+{
+"value": "MONTH",
+"label": "${_UI_PickList_emc_frequency_picklist_MONTH}"
+},
+{
+"value": "LAST_DAY_OF_MONTH",
+"label": "${_UI_PickList_emc_frequency_picklist_LAST_DAY_OF_MONTH}"
+}]
+},
+"xcp_taskwqflagpicklist":{
+"model": "xcp.picklist.models.IntegerModel",
+"data": [{
+"value": 1,
+"label": "${_UI_PickList_xcp_taskwqflagpicklist_1}"
+},
+{
+"value": 0,
+"label": "${_UI_PickList_xcp_taskwqflagpicklist_0}"
+}]
+},
+"emc_package_delivery":{
+"model": "xcp.picklist.models.StringModel",
+"data": [{
+"value": "None",
+"label": "${_UI_PickList_emc_package_delivery_None}"
+},
+{
+"value": "DQL",
+"label": "${_UI_PickList_emc_package_delivery_DQL}"
+}]
+}
+}

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean class="com.emc.xcp.services.datasource.domain.RealTimeQuery" id="emc_scheduled_workflows">
+  <property name="columns">
+    <list>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="process_name"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="next_invocation_time"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="is_active"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="package_delivery"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="package_query"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="id"/>
+        <property name="sortable" value="false"/>
+      </bean>
+      <bean class="com.emc.xcp.services.datasource.domain.Column">
+        <property name="property" value="r_object_type"/>
+        <property name="sortable" value="false"/>
+      </bean>
+    </list>
+  </property>
+  <property name="expressionSet">
+    <bean class="com.emc.xcp.services.datasource.domain.expression.ExpressionSet">
+      <property name="expressions">
+        <list>
+          <bean class="com.emc.xcp.services.datasource.domain.expression.SimpleValueExpression">
+            <property name="caseSensitive" value="true"/>
+            <property name="exactMatch" value="false"/>
+            <property name="fuzzy" value="false"/>
+            <property name="property" value="is_active"/>
+            <property name="repeated" value="false"/>
+            <property name="value" value="true"/>
+            <property name="dataType" value="BOOLEAN"/>
+            <property name="operator" value="EQUAL"/>
+          </bean>
+          <bean class="com.emc.xcp.services.datasource.domain.expression.date.DateSimpleValueExpression">
+            <property name="caseSensitive" value="true"/>
+            <property name="exactMatch" value="false"/>
+            <property name="fuzzy" value="false"/>
+            <property name="property" value="next_invocation_time"/>
+            <property name="repeated" value="false"/>
+            <property name="value" value="now()"/>
+            <property name="dataType" value="DATE"/>
+            <property name="operator" value="LESS_THAN"/>
+            <property name="precision" value="DAY"/>
+          </bean>
+        </list>
+      </property>
+      <property name="operator" value="AND"/>
+    </bean>
+  </property>
+  <property name="mapping" ref="emc_scheduled_workflowsmapping"/>
+</bean>
+
+<bean class="com.emc.xcp.services.datasource.domain.mapping.RealTimeMapping" id="emc_scheduled_workflowsmapping">
+  <property name="rootType">
+    <bean class="com.emc.xcp.services.datasource.domain.mapping.ObjectType">
+      <property name="typeName" value="emc_invocation_schedule"/>
+      <property name="attributes">
+        <map>
+          <entry key="id">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="r_object_id"/>
+            </bean>
+          </entry>
+          <entry key="is_active">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="is_active"/>
+            </bean>
+          </entry>
+          <entry key="next_invocation_time">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="next_invocation_time"/>
+            </bean>
+          </entry>
+          <entry key="package_delivery">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="package_delivery"/>
+            </bean>
+          </entry>
+          <entry key="package_query">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="package_query"/>
+            </bean>
+          </entry>
+          <entry key="process_name">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="process_name"/>
+            </bean>
+          </entry>
+          <entry key="r_object_type">
+            <bean class="com.emc.xcp.services.datasource.domain.mapping.DocbaseAttribute">
+              <property name="persistentName" value="r_object_type"/>
+            </bean>
+          </entry>
+        </map>
+      </property>
+    </bean>
+  </property>
+</bean>
+
+</beans>

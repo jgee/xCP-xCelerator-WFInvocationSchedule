@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsProcess:Process xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsActivity="http://documentum.com/bpm/activity" xmlns:nsProcess="http://documentum.com/bpm/process" urn="urn:emc:com.emc.ide.artifact.process:Artifacts/Processes/workflow_invocation.process" categoryId="com.emc.ide.artifact.process" name="workflow_invocation" label="Workflow Invocation Scheduler" synchronous="true">
+  <activities name="Start from Repository" activityType="INITIATE" description="" priority="Medium" taskName="" taskInstructions="">
+    <trigger expectedEventName="" canRunMultipleTimes="true"/>
+    <transition xsi:type="nsActivity:AllFlowsTransition"/>
+    <uiinfo imageScale="100" image="event_start_integration_32_proc.png">
+      <topLeftPoint x="37" y="275"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </uiinfo>
+    <performerConfig xsi:type="nsActivity:InboundInitiatePerformerConfiguration" serviceDefinition="&lt;?xml version=&quot;1.0&quot;?>&#xA;&lt;ServiceDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;activity.xsd&quot;>&#xA;    &lt;Name>DQL Inbound - Initiate&lt;/Name>&#xA;    &lt;RuntimeModuleName>DQLInboundRuntimeModule&lt;/RuntimeModuleName>&#xA;    &lt;DesignModuleName>DQLInboundDesignModule&lt;/DesignModuleName>&#xA;    &lt;Configuration/>&#xA;    &lt;InputMsgCopyRules/>&#xA;    &lt;OutputMsgCopyRules/>&#xA;    &lt;CorrelationMsgCopyRules/>&#xA;    &lt;UserDefinedInputTreeNodes/>&#xA;    &lt;UserDefinedOutputTreeNodes/>&#xA;    &lt;InputSchemaConfigs/>&#xA;    &lt;OutputSchemaConfigs/>&#xA;&lt;/ServiceDefinition>&#xA;"/>
+  </activities>
+  <processData/>
+  <defaultSettings/>
+  <processUIInfo>
+    <startActivityUIInfo imageScale="100" image="palette/event_start_32_proc.png">
+      <topLeftPoint x="50" y="150"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </startActivityUIInfo>
+    <endActivityUIInfo imageScale="100" image="palette/event_end_32_proc.png">
+      <topLeftPoint x="349" y="150"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </endActivityUIInfo>
+  </processUIInfo>
+  <eventConfigs label="Workflow Started">
+    <triggerType type="PROCESS_WORKFLOW_STARTED"/>
+  </eventConfigs>
+  <eventConfigs label="Workflow changed state">
+    <triggerType type="PROCESS_WORKFLOW_CHANGESTATE"/>
+  </eventConfigs>
+  <eventConfigs label="Workflow Aborted">
+    <triggerType type="PROCESS_WORKFLOW_ABORTED"/>
+  </eventConfigs>
+  <eventConfigs label="Workflow completed">
+    <triggerType type="PROCESS_WORKFLOW_COMPLETED"/>
+  </eventConfigs>
+</nsProcess:Process>

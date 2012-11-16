@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uitemplate:Page xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uitemplate="http://www.emc.com/xcp2/2010/uitemplate" urn="urn:emc:com.emc.xcp.artifact.page:Artifacts/Pages/edit_base_folder.page" categoryId="com.emc.xcp.artifact.page" name="edit_base_folder" label="Edit Base Folder" templateType="folder" templateScope="INSTANCE">
+  <title exprStr="Edit Base Folder"/>
+  <rootContainer widgetEntry="//@widgetMap[key='root']">
+    <properties name="xcpId" value="root" entry="//@rootContainer/@propertyMap.0"/>
+    <propertyMap key="xcpId" value="//@rootContainer/@properties.0"/>
+  </rootContainer>
+  <widgetMap key="root" value="//@rootContainer"/>
+  <primaryModel href="urn:xcp:com.emc.xcp.artifact.folder:Artifacts/Folders/dm_folder.folder#/"/>
+</uitemplate:Page>

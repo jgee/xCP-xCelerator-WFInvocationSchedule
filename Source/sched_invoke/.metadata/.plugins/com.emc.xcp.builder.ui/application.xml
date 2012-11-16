@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application name="sched_invoke" perspective="com.emc.xcp.builder.appperspective">
+<editors>
+<editor id="com.emc.xcp.uitemplate.ui.PageEditor" path="/sched_invoke/Artifacts/Pages/application_master.page"/>
+<editor id="com.emc.xcp.uitemplate.ui.PageEditor" path="/sched_invoke/Artifacts/Pages/create_schedule_inv.page"/>
+<editor active="true" id="com.emc.ide.artifact.bpm.process.editor" path="/sched_invoke/Artifacts/Processes/demo_workflow.process"/>
+</editors>
+</application>

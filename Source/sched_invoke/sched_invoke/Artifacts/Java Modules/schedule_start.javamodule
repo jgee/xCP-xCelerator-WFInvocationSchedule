@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsJavaModule:JavaModule xmlns:nsJavaModule="http://xcp.emc.com/javamodule" urn="urn:xcp:com.emc.xcp.artifact.javamodule.category:Artifacts/Java Modules/schedule_start.javamodule" categoryId="com.emc.xcp.artifact.javamodule.category" name="invoke_start" label="Invocation Scheduler: Start" implementationClass="com.emc.community.xcelerators.workflowutil.impl.WorkflowUtilImpl">
+
+<implementationJars contentPath="content/modules/invoke.jar"/>
+
+</nsJavaModule:JavaModule>

@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsProcess:Process xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsActivity="http://documentum.com/bpm/activity" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsCommon="http://documentum.com/common" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" xmlns:nsProcess="http://documentum.com/bpm/process" urn="urn:emc:com.emc.ide.artifact.process:Artifacts/Processes/workflow_invocation.process" categoryId="com.emc.ide.artifact.process" name="workflow_invocation" label="Workflow Invocation Scheduler" description="" webServiceTargetNamespace="" workflowInstructions="">
+  <activities name="Start from Repository" activityType="INITIATE" description="" priority="Medium" taskName="" taskInstructions="" destFlows="//@flows[name='L8']">
+    <trigger expectedEventName="" canRunMultipleTimes="true"/>
+    <transition xsi:type="nsActivity:AllFlowsTransition"/>
+    <timers/>
+    <calendar flag="Performer"/>
+    <uiinfo imageScale="100" image="event_start_integration_32_proc.png">
+      <topLeftPoint x="54" y="268"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </uiinfo>
+    <performerConfig xsi:type="nsActivity:InboundInitiatePerformerConfiguration" serviceDefinition="&lt;?xml version=&quot;1.0&quot;?>&#xA;&lt;ServiceDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;activity.xsd&quot;>&#xA;    &lt;Name>DQL Inbound - Initiate&lt;/Name>&#xA;    &lt;RuntimeModuleName>DQLInboundRuntimeModule&lt;/RuntimeModuleName>&#xA;    &lt;DesignModuleName>DQLInboundDesignModule&lt;/DesignModuleName>&#xA;    &lt;Configuration>&#xA;        &lt;Parameter>&#xA;            &lt;Name>CONFIG_COMPARATOR_PARAMETER_NAMES&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[false,emc_invocation_schedule&#xA;    WHERE is_active = TRUE&#xA;    AND r_lock_owner IS NULLSTRING&#xA;    AND next_invocation_time &lt;= DATE(NOW)&#xA;    AND&#xA;    (&#xA;        is_being_processed IS NULL&#xA;        OR is_being_processed = FALSE&#xA;    )]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>NO_OF_PROCESSORS_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[1]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>UPDATE_OBJECT_STMT_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[update emc_invocation_schedule objects SET is_being_processed = TRUE]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>DQL_FETCH_QUEREY_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[emc_invocation_schedule&#xA;    WHERE is_active = TRUE&#xA;    AND r_lock_owner IS NULLSTRING&#xA;    AND next_invocation_time &lt;= DATE(NOW)&#xA;    AND&#xA;    (&#xA;        is_being_processed IS NULL&#xA;        OR is_being_processed = FALSE&#xA;    )]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>CONNECT_TO_DIFFERENT_DOCBASE_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[false]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>ENDPOINT_URN&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[urn:emc:com.emc.xcp.artifact.endpoint:Artifacts/Endpoints/docbase.endpoint]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>POLLING_FREQ_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[30]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>ENDPOINT_LABEL&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[docbase]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>ARCHIVE_FOLDER_NAME_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value xsi:nil=&quot;true&quot;>&lt;![CDATA[]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>POST_PROCESSING_OPTION_CONFIG_PARAM_NAME&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[3]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;    &lt;/Configuration>&#xA;    &lt;InputMsgCopyRules>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>57&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Object/r_object_id&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/Process Data/Packages/invoke_schedule/r_object_id&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;    &lt;/InputMsgCopyRules>&#xA;    &lt;OutputMsgCopyRules/>&#xA;    &lt;CorrelationMsgCopyRules/>&#xA;    &lt;UserDefinedInputTreeNodes/>&#xA;    &lt;UserDefinedOutputTreeNodes/>&#xA;    &lt;InputSchemaConfigs/>&#xA;    &lt;OutputSchemaConfigs/>&#xA;&lt;/ServiceDefinition>&#xA;"/>
+    <packageCharacteristics key="//@processData/@packages[name='invoke_schedule']">
+      <value visible="true" mandatory="true" versionLabel="CURRENT"/>
+    </packageCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='package_names']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='component_ids']">
+      <value visible="true"/>
+    </variableCharacteristics>
+  </activities>
+  <activities name="Initiate" activityType="INITIATE" priority="Medium" taskName="" taskInstructions="" destFlows="//@flows[name='L1']">
+    <trigger canRunMultipleTimes="true"/>
+    <transition xsi:type="nsActivity:AllFlowsTransition"/>
+    <uiinfo imageScale="100" image="palette/event_start_32_proc.png">
+      <topLeftPoint x="50" y="160"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </uiinfo>
+    <performerConfig xsi:type="nsActivity:DefaultInitiatePerformerConfiguration"/>
+    <packageCharacteristics key="//@processData/@packages[name='invoke_schedule']">
+      <value visible="true" mandatory="true" versionLabel="CURRENT"/>
+    </packageCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='package_names']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='component_ids']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <taskContract categoryId="com.emc.ide.artifact.process.activity.taskcontract" name="workflow_invocation_initiate" label="Initiate">
+      <dataServiceContracts xsi:type="nsDataserviceContract:DataActionContract" categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_create_workflow_invocation_initiate" label="Initiate Process Workflow Invocation Scheduler" implCategoryId="com.emc.ide.artifact.process.activity.taskcontract">
+        <inputs xsi:type="nsDataserviceContract:StructureElement" name="processVariables" label="Variables">
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="component_ids" label="component_ids" repeating="true">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+          <elements xsi:type="nsDataserviceContract:AttributeElement" name="package_names" label="package_names" repeating="true">
+            <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+          </elements>
+        </inputs>
+        <inputs xsi:type="nsDataserviceContract:StructureElement" name="processPackages" label="Packages">
+          <elements xsi:type="nsDataserviceContract:StructureElement" name="invoke_schedule" label="invoke_schedule">
+            <elements xsi:type="nsDataserviceContract:AttributeElement" name="object_name" label="Name">
+              <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+            </elements>
+            <elements xsi:type="nsDataserviceContract:AttributeElement" name="configuration_name" label="Configuration Name">
+              <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+            </elements>
+            <elements xsi:type="nsDataserviceContract:AttributeElement" name="frequency_picklist" label="Frequency Picklist">
+              <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+            </elements>
+            <elements xsi:type="nsDataserviceContract:AttributeElement" name="is_being_processed" label="is_being_processed">
+              <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+            </elements>
+            <elements xsi:type="nsDataserviceContract:AttributeElement" name="is_active" label="Is Active">
+              <attributeType xsi:type="nsAttributeDatatypes:BooleanType"/>
+            </elements>
+            <elements xsi:type="nsDataserviceContract:AttributeElement" name="next_invocation_time" label="Next Invocation Time">
+              <attributeType xsi:type="nsAttributeDatatypes:DateTimeType"/>
+            </elements>
+            <elements xsi:type="nsDataserviceContract:AttributeElement" name="package_delivery" label="Package Delivery">
+              <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+            </elements>
+            <elements xsi:type="nsDataserviceContract:AttributeElement" name="package_query" label="Package Query">
+              <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+            </elements>
+            <elements xsi:type="nsDataserviceContract:AttributeElement" name="process_name" label="Process Name">
+              <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+            </elements>
+            <elements xsi:type="nsDataserviceContract:AttributeElement" name="id" label="Object Id">
+              <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+            </elements>
+          </elements>
+        </inputs>
+        <inputs xsi:type="nsDataserviceContract:AttributeElement" name="attachments" label="Attachments" repeating="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </inputs>
+        <primaryElement name="workflow_invocation_initiate" dataModel="//@activities[name='Initiate']/@taskContract"/>
+        <actionType type="Create"/>
+      </dataServiceContracts>
+    </taskContract>
+  </activities>
+  <activities name="Decision Split" description="" priority="Medium" taskName="" taskInstructions="" sourceFlows="//@flows[name='L4'] //@flows[name='L9']" destFlows="//@flows[name='L2'] //@flows[name='L5'] //@flows[name='L7']">
+    <trigger numOfInputFlows="1" expectedEventName="" canRunMultipleTimes="true"/>
+    <transition xsi:type="nsActivity:ConditionalTransition">
+      <resolver>
+        <conditions name="RouteCase">
+          <conditionExpression exprStr="process.Packages.invoke_schedule.package_delivery=='None'"/>
+          <returnValues xsi:type="nsCommon:InternalReferenceResolutionConfig">
+            <reference refValue="//@flows[name='L2']"/>
+          </returnValues>
+        </conditions>
+        <conditions name="RouteCase1">
+          <conditionExpression exprStr="process.Packages.invoke_schedule.package_delivery=='DQL'"/>
+          <returnValues xsi:type="nsCommon:InternalReferenceResolutionConfig">
+            <reference refValue="//@flows[name='L5']"/>
+          </returnValues>
+        </conditions>
+        <conditions name="EXCEPTIONAL">
+          <returnValues xsi:type="nsCommon:InternalReferenceResolutionConfig">
+            <reference refValue="//@flows[name='L7']"/>
+          </returnValues>
+        </conditions>
+      </resolver>
+    </transition>
+    <timers/>
+    <calendar flag="Performer"/>
+    <uiinfo imageScale="100" image="decision_split_32_proc.png">
+      <topLeftPoint x="238" y="160"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </uiinfo>
+    <performerConfig xsi:type="nsActivity:NoOpOutboundPerformerConfiguration" timeout="60">
+      <performer>
+        <dataResolutionConfig xsi:type="nsCommon:PredefinedResolutionConfig"/>
+      </performer>
+      <methodFailure/>
+    </performerConfig>
+    <packageCharacteristics key="//@processData/@packages[name='invoke_schedule']">
+      <value visible="true" mandatory="true" versionLabel="CURRENT"/>
+    </packageCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='component_ids']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='package_names']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <eventConfigs label="Activity Completed">
+      <triggerType type="PROCESS_ACTIVITY_COMPLETED"/>
+    </eventConfigs>
+  </activities>
+  <activities name="Terminate Workflow Due to Error" description="" priority="Medium" taskName="" taskInstructions="" sourceFlows="//@flows[name='L7']" destFlows="//@flows[name='L9']">
+    <trigger expectedEventName="" canRunMultipleTimes="true"/>
+    <transition xsi:type="nsActivity:AllFlowsTransition"/>
+    <timers/>
+    <calendar flag="Performer"/>
+    <uiinfo imageScale="100" image="activity_autoint_48x32_proc.png">
+      <topLeftPoint x="367" y="274"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </uiinfo>
+    <performerConfig xsi:type="nsActivity:SvcDefBasedOutboundPerformerConfiguration" timeout="60" serviceDefinition="&lt;?xml version=&quot;1.0&quot;?>&#xA;&lt;ServiceDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;activity.xsd&quot;>&#xA;    &lt;Name>Invoke Java&lt;/Name>&#xA;    &lt;RuntimeModuleName>BOFModuleRuntimeModule&lt;/RuntimeModuleName>&#xA;    &lt;DesignModuleName>InvokeJavaActivityPanel&lt;/DesignModuleName>&#xA;    &lt;Configuration>&#xA;        &lt;Parameter>&#xA;            &lt;Name>BOF_METHOD_NAME_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[throwException]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>BOF_INTERFACE_NAME_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[com.emc.community.xcelerators.exceptions.impl.ExceptionsUtilImpl]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>arg0Type&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[com.emc.community.xcelerators.exceptions.params.DeliberateExceptionDescription]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>BOF_MODULE_NAME_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[urn:xcp:com.emc.xcp.artifact.javamodule.category:Artifacts/Java Modules/schedule_exception.javamodule]]>&lt;/Value>&#xA;            &lt;Type>ModuleName&lt;/Type>&#xA;        &lt;/Parameter>&#xA;    &lt;/Configuration>&#xA;    &lt;InputMsgCopyRules>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Concat&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>41&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>&quot;Unsupported package delivery: &quot;&lt;/Value>&#xA;                &lt;Value>/Process Data/Packages/invoke_schedule/package_delivery&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/Arguments/arg0(com.emc.community.xcelerators.exceptions.params.DeliberateExceptionDescription)/message&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;    &lt;/InputMsgCopyRules>&#xA;    &lt;OutputMsgCopyRules/>&#xA;    &lt;CorrelationMsgCopyRules/>&#xA;    &lt;UserDefinedInputTreeNodes/>&#xA;    &lt;UserDefinedOutputTreeNodes/>&#xA;    &lt;InputSchemaConfigs/>&#xA;    &lt;OutputSchemaConfigs/>&#xA;&lt;/ServiceDefinition>&#xA;">
+      <performer>
+        <dataResolutionConfig xsi:type="nsCommon:PredefinedResolutionConfig"/>
+      </performer>
+      <methodFailure/>
+    </performerConfig>
+    <packageCharacteristics key="//@processData/@packages[name='invoke_schedule']">
+      <value visible="true" mandatory="true" versionLabel="CURRENT"/>
+    </packageCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='component_ids']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='package_names']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <eventConfigs label="Activity Completed">
+      <triggerType type="PROCESS_ACTIVITY_COMPLETED"/>
+    </eventConfigs>
+  </activities>
+  <activities name="Get package from DQL" description="" priority="Medium" taskName="" taskInstructions="" sourceFlows="//@flows[name='L5']" destFlows="//@flows[name='L6']">
+    <trigger expectedEventName="" canRunMultipleTimes="true"/>
+    <transition xsi:type="nsActivity:AllFlowsTransition"/>
+    <timers/>
+    <calendar flag="Performer"/>
+    <uiinfo imageScale="100" image="activity_autoint_48x32_proc.png">
+      <topLeftPoint x="367" y="80"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </uiinfo>
+    <performerConfig xsi:type="nsActivity:SvcDefBasedOutboundPerformerConfiguration" timeout="60" serviceDefinition="&lt;?xml version=&quot;1.0&quot;?>&#xA;&lt;ServiceDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;activity.xsd&quot;>&#xA;    &lt;Name>Invoke Java&lt;/Name>&#xA;    &lt;RuntimeModuleName>BOFModuleRuntimeModule&lt;/RuntimeModuleName>&#xA;    &lt;DesignModuleName>InvokeJavaActivityPanel&lt;/DesignModuleName>&#xA;    &lt;Configuration>&#xA;        &lt;Parameter>&#xA;            &lt;Name>BOF_METHOD_NAME_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[executeReadQuery]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>BOF_INTERFACE_NAME_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[com.emc.community.xcelerators.dql.impl.ConfigurableDqlExecutorImpl]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>arg0Type&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[com.emc.community.xcelerators.dql.params.DqlQuery]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>BOF_MODULE_NAME_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[urn:xcp:com.emc.xcp.artifact.javamodule.category:Artifacts/Java Modules/schedule_pkgdql.javamodule]]>&lt;/Value>&#xA;            &lt;Type>ModuleName&lt;/Type>&#xA;        &lt;/Parameter>&#xA;    &lt;/Configuration>&#xA;    &lt;InputMsgCopyRules>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>41&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Process Data/Packages/invoke_schedule/package_query&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/Arguments/arg0(com.emc.community.xcelerators.dql.params.DqlQuery)/dql&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;    &lt;/InputMsgCopyRules>&#xA;    &lt;OutputMsgCopyRules>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>57&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Return Value/com.emc.community.xcelerators.dql.params.Row[ALL]/columnsInRow[0]&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/Process Data/Variables/package_names[0]&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;        &lt;MappingRule>&#xA;            &lt;FunctionName>Copy&lt;/FunctionName>&#xA;            &lt;Location>&#xA;                &lt;XPosition>175&lt;/XPosition>&#xA;                &lt;YPosition>73&lt;/YPosition>&#xA;            &lt;/Location>&#xA;            &lt;From>&#xA;                &lt;Value>/Return Value/com.emc.community.xcelerators.dql.params.Row[ALL]/columnsInRow[1]&lt;/Value>&#xA;            &lt;/From>&#xA;            &lt;To>/Process Data/Variables/component_ids[0]&lt;/To>&#xA;            &lt;RuleType>RULE_TYPE_FOR_ALL&lt;/RuleType>&#xA;            &lt;TargetWriteOption>TARGET_WRITE_OVERWRITE&lt;/TargetWriteOption>&#xA;        &lt;/MappingRule>&#xA;    &lt;/OutputMsgCopyRules>&#xA;    &lt;CorrelationMsgCopyRules/>&#xA;    &lt;UserDefinedInputTreeNodes/>&#xA;    &lt;UserDefinedOutputTreeNodes/>&#xA;    &lt;InputSchemaConfigs/>&#xA;    &lt;OutputSchemaConfigs/>&#xA;&lt;/ServiceDefinition>&#xA;">
+      <performer>
+        <dataResolutionConfig xsi:type="nsCommon:PredefinedResolutionConfig"/>
+      </performer>
+      <methodFailure/>
+    </performerConfig>
+    <packageCharacteristics key="//@processData/@packages[name='invoke_schedule']">
+      <value visible="true" mandatory="true" versionLabel="CURRENT"/>
+    </packageCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='component_ids']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='package_names']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <eventConfigs label="Activity Completed">
+      <triggerType type="PROCESS_ACTIVITY_COMPLETED"/>
+    </eventConfigs>
+  </activities>
+  <activities name="Start Workflow" description="" priority="Medium" taskName="" taskInstructions="" sourceFlows="//@flows[name='L2'] //@flows[name='L6']" destFlows="//@flows[name='L3']">
+    <trigger expectedEventName="" canRunMultipleTimes="true"/>
+    <transition xsi:type="nsActivity:AllFlowsTransition"/>
+    <timers/>
+    <calendar flag="Performer"/>
+    <uiinfo imageScale="100" image="activity_autoint_48x32_proc.png">
+      <topLeftPoint x="512" y="160"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </uiinfo>
+    <performerConfig xsi:type="nsActivity:SvcDefBasedOutboundPerformerConfiguration" timeout="60" serviceDefinition="&lt;?xml version=&quot;1.0&quot;?>&#xA;&lt;ServiceDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;activity.xsd&quot;>&#xA;    &lt;Name>Invoke Java&lt;/Name>&#xA;    &lt;RuntimeModuleName>BOFModuleRuntimeModule&lt;/RuntimeModuleName>&#xA;    &lt;DesignModuleName>InvokeJavaActivityPanel&lt;/DesignModuleName>&#xA;    &lt;Configuration>&#xA;        &lt;Parameter>&#xA;            &lt;Name>BOF_METHOD_NAME_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[startWorkflow]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>BOF_INTERFACE_NAME_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[com.emc.community.xcelerators.workflowutil.impl.WorkflowUtilImpl]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>arg0Type&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[com.emc.community.xcelerators.workflowutil.params.StartWorkflowWithPackagesListParams]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>BOF_MODULE_NAME_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[urn:xcp:com.emc.xcp.artifact.javamodule.category:Artifacts/Java Modules/schedule_start.javamodule]]>&lt;/Value>&#xA;            &lt;Type>ModuleName&lt;/Type>&#xA;        &lt;/Parameter>&#xA;    &lt;/Configuration>&#xA;    &lt;InputMsgCopyRules/>&#xA;    &lt;OutputMsgCopyRules/>&#xA;    &lt;CorrelationMsgCopyRules/>&#xA;    &lt;UserDefinedInputTreeNodes/>&#xA;    &lt;UserDefinedOutputTreeNodes/>&#xA;    &lt;InputSchemaConfigs/>&#xA;    &lt;OutputSchemaConfigs/>&#xA;&lt;/ServiceDefinition>&#xA;">
+      <performer>
+        <dataResolutionConfig xsi:type="nsCommon:PredefinedResolutionConfig"/>
+      </performer>
+      <methodFailure/>
+    </performerConfig>
+    <packageCharacteristics key="//@processData/@packages[name='invoke_schedule']">
+      <value visible="true" mandatory="true" versionLabel="CURRENT"/>
+    </packageCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='package_names']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='component_ids']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <eventConfigs label="Activity Completed">
+      <triggerType type="PROCESS_ACTIVITY_COMPLETED"/>
+    </eventConfigs>
+  </activities>
+  <activities name="Set next invocation date" activityType="END" description="" priority="Medium" taskName="" taskInstructions="" sourceFlows="//@flows[name='L3']">
+    <trigger expectedEventName="" canRunMultipleTimes="true"/>
+    <transition xsi:type="nsActivity:AllFlowsTransition"/>
+    <timers/>
+    <calendar flag="Performer"/>
+    <uiinfo imageScale="100" image="activity_autoint_48x32_proc.png">
+      <topLeftPoint x="591" y="167"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </uiinfo>
+    <performerConfig xsi:type="nsActivity:SvcDefBasedOutboundPerformerConfiguration" timeout="60" serviceDefinition="&lt;?xml version=&quot;1.0&quot;?>&#xA;&lt;ServiceDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;activity.xsd&quot;>&#xA;    &lt;Name>Invoke Java&lt;/Name>&#xA;    &lt;RuntimeModuleName>BOFModuleRuntimeModule&lt;/RuntimeModuleName>&#xA;    &lt;DesignModuleName>InvokeJavaActivityPanel&lt;/DesignModuleName>&#xA;    &lt;Configuration>&#xA;        &lt;Parameter>&#xA;            &lt;Name>arg2Type&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[java.lang.String]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>BOF_METHOD_NAME_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[add]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>BOF_INTERFACE_NAME_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[com.emc.community.xcelerators.dateutil.impl.DateUtilImpl]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>arg0Type&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[java.util.Date]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>BOF_MODULE_NAME_CONFIG_PARAM&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[urn:xcp:com.emc.xcp.artifact.javamodule.category:Artifacts/Java Modules/schedule_nextinvoke.javamodule]]>&lt;/Value>&#xA;            &lt;Type>ModuleName&lt;/Type>&#xA;        &lt;/Parameter>&#xA;        &lt;Parameter>&#xA;            &lt;Name>arg1Type&lt;/Name>&#xA;            &lt;Value>&lt;![CDATA[int]]>&lt;/Value>&#xA;            &lt;Type>String&lt;/Type>&#xA;        &lt;/Parameter>&#xA;    &lt;/Configuration>&#xA;    &lt;InputMsgCopyRules/>&#xA;    &lt;OutputMsgCopyRules/>&#xA;    &lt;CorrelationMsgCopyRules/>&#xA;    &lt;UserDefinedInputTreeNodes/>&#xA;    &lt;UserDefinedOutputTreeNodes/>&#xA;    &lt;InputSchemaConfigs/>&#xA;    &lt;OutputSchemaConfigs/>&#xA;&lt;/ServiceDefinition>&#xA;">
+      <performer>
+        <dataResolutionConfig xsi:type="nsCommon:PredefinedResolutionConfig"/>
+      </performer>
+      <methodFailure/>
+    </performerConfig>
+    <packageCharacteristics key="//@processData/@packages[name='invoke_schedule']">
+      <value visible="true" mandatory="true" versionLabel="CURRENT"/>
+    </packageCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='component_ids']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='package_names']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <eventConfigs label="Activity Completed">
+      <triggerType type="PROCESS_ACTIVITY_COMPLETED"/>
+    </eventConfigs>
+  </activities>
+  <activities name="Join" activityType="BEGIN" description="" priority="Medium" taskName="" taskInstructions="" sourceFlows="//@flows[name='L1'] //@flows[name='L8']" destFlows="//@flows[name='L4']">
+    <trigger numOfInputFlows="1" expectedEventName="" canRunMultipleTimes="true"/>
+    <transition xsi:type="nsActivity:AllFlowsTransition"/>
+    <uiinfo imageScale="100" image="decision_join_32_proc.png">
+      <topLeftPoint x="140" y="160"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </uiinfo>
+    <performerConfig xsi:type="nsActivity:NoOpOutboundPerformerConfiguration" timeout="60">
+      <performer>
+        <dataResolutionConfig xsi:type="nsCommon:PredefinedResolutionConfig" valueArity="Single"/>
+      </performer>
+      <methodFailure/>
+    </performerConfig>
+    <packageCharacteristics key="//@processData/@packages[name='invoke_schedule']">
+      <value visible="true" mandatory="true" versionLabel="CURRENT"/>
+    </packageCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='package_names']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <variableCharacteristics key="//@processData/@variables[name='component_ids']">
+      <value visible="true"/>
+    </variableCharacteristics>
+    <eventConfigs label="Activity Completed">
+      <triggerType type="PROCESS_ACTIVITY_COMPLETED"/>
+    </eventConfigs>
+  </activities>
+  <processData>
+    <variables xsi:type="nsProcess:SimpleVariable">
+      <attribute name="package_names" label="package_names" repeating="true">
+        <type xsi:type="nsAttributeDatatypes:StringType"/>
+        <defaultValue exprStr=""/>
+      </attribute>
+    </variables>
+    <variables xsi:type="nsProcess:SimpleVariable">
+      <attribute name="component_ids" label="component_ids" repeating="true">
+        <type xsi:type="nsAttributeDatatypes:StringType"/>
+        <defaultValue exprStr=""/>
+      </attribute>
+    </variables>
+    <packages name="invoke_schedule">
+      <type xsi:type="nsDatatypes:BusinessObject" href="urn:emc:com.emc.xcp.artifact.bo:Artifacts/Business Objects/invocation_schedule.businessobj#/"/>
+    </packages>
+    <packageCharacteristics key="//@processData/@packages[name='invoke_schedule']">
+      <value visible="true" mandatory="true" versionLabel="CURRENT"/>
+    </packageCharacteristics>
+  </processData>
+  <flows name="L2" from="//@activities[name='Decision%20Split']" to="//@activities[name='Start%20Workflow']">
+    <uiinfo srcActivityLocIndex="4" destActivityLocIndex="1">
+      <line/>
+      <labelStyle fontName="Helvetica" fontSize="10"/>
+    </uiinfo>
+  </flows>
+  <flows name="L3" from="//@activities[name='Start%20Workflow']" to="//@activities[name='Set%20next%20invocation%20date']">
+    <uiinfo srcActivityLocIndex="4" destActivityLocIndex="1">
+      <line/>
+      <labelStyle fontName="Helvetica" fontSize="10"/>
+    </uiinfo>
+  </flows>
+  <flows name="L5" from="//@activities[name='Decision%20Split']" to="//@activities[name='Get%20package%20from%20DQL']">
+    <uiinfo srcActivityLocIndex="4" destActivityLocIndex="1">
+      <line/>
+      <labelStyle fontName="Helvetica" fontSize="10"/>
+    </uiinfo>
+  </flows>
+  <flows name="L6" from="//@activities[name='Get%20package%20from%20DQL']" to="//@activities[name='Start%20Workflow']">
+    <uiinfo destActivityLocIndex="2">
+      <line/>
+      <labelStyle fontName="Helvetica" fontSize="10"/>
+    </uiinfo>
+  </flows>
+  <flows name="L7" from="//@activities[name='Decision%20Split']" to="//@activities[name='Terminate%20Workflow%20Due%20to%20Error']">
+    <uiinfo srcActivityLocIndex="4" destActivityLocIndex="1">
+      <line/>
+      <labelStyle fontName="Helvetica" fontSize="10"/>
+    </uiinfo>
+  </flows>
+  <flows name="L1" from="//@activities[name='Initiate']" to="//@activities[name='Join']">
+    <uiinfo destActivityLocIndex="4">
+      <line/>
+      <labelStyle fontName="Helvetica" fontSize="10"/>
+    </uiinfo>
+  </flows>
+  <flows name="L4" from="//@activities[name='Join']" to="//@activities[name='Decision%20Split']">
+    <uiinfo srcActivityLocIndex="4" destActivityLocIndex="1">
+      <line/>
+      <labelStyle fontName="Helvetica" fontSize="10"/>
+    </uiinfo>
+  </flows>
+  <flows name="L8" from="//@activities[name='Start%20from%20Repository']" to="//@activities[name='Join']">
+    <uiinfo srcActivityLocIndex="4" destActivityLocIndex="4">
+      <line/>
+      <labelStyle fontName="Helvetica" fontSize="10"/>
+    </uiinfo>
+  </flows>
+  <flows name="L9" from="//@activities[name='Terminate%20Workflow%20Due%20to%20Error']" to="//@activities[name='Decision%20Split']">
+    <uiinfo srcActivityLocIndex="2" destActivityLocIndex="3">
+      <line multiSegment="true">
+        <points x="375" y="228"/>
+        <points x="375" y="212"/>
+        <points x="239" y="212"/>
+        <points x="239" y="196"/>
+        <points x="218" y="171"/>
+        <points/>
+        <points x="367" y="231"/>
+        <points x="367" y="201"/>
+        <points x="238" y="201"/>
+        <points x="238" y="171"/>
+        <points x="367" y="231"/>
+        <points x="367" y="200"/>
+        <points x="238" y="200"/>
+        <points x="238" y="170"/>
+        <points x="367" y="231"/>
+        <points x="367" y="200"/>
+        <points x="238" y="200"/>
+        <points x="238" y="170"/>
+        <points x="367" y="231"/>
+        <points x="367" y="200"/>
+        <points x="238" y="200"/>
+        <points x="238" y="170"/>
+        <points x="367" y="231"/>
+        <points x="367" y="200"/>
+        <points x="238" y="200"/>
+        <points x="238" y="170"/>
+        <points x="367" y="240"/>
+        <points x="367" y="205"/>
+        <points x="238" y="205"/>
+        <points x="238" y="170"/>
+        <points x="367" y="240"/>
+        <points x="367" y="205"/>
+        <points x="238" y="205"/>
+        <points x="238" y="170"/>
+      </line>
+      <labelStyle fontName="Helvetica" fontSize="10"/>
+    </uiinfo>
+  </flows>
+  <defaultSettings/>
+  <processUIInfo>
+    <startActivityUIInfo imageScale="100" image="palette/event_start_32_proc.png">
+      <topLeftPoint x="50" y="160"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </startActivityUIInfo>
+    <endActivityUIInfo imageScale="100" image="palette/event_end_32_proc.png">
+      <topLeftPoint x="692" y="161"/>
+      <textStyle fontName="Dialog" fontSize="10">
+        <bgColor/>
+        <fgColor/>
+      </textStyle>
+    </endActivityUIInfo>
+    <endSequenceFlowUIInfo destActivityLocIndex="4">
+      <line/>
+      <labelStyle fontName="Helvetica" fontSize="10"/>
+    </endSequenceFlowUIInfo>
+  </processUIInfo>
+  <eventConfigs label="Workflow Started">
+    <triggerType type="PROCESS_WORKFLOW_STARTED"/>
+  </eventConfigs>
+  <eventConfigs label="Workflow changed state">
+    <triggerType type="PROCESS_WORKFLOW_CHANGESTATE"/>
+  </eventConfigs>
+  <eventConfigs label="Workflow Aborted">
+    <triggerType type="PROCESS_WORKFLOW_ABORTED"/>
+  </eventConfigs>
+  <eventConfigs label="Workflow completed">
+    <triggerType type="PROCESS_WORKFLOW_COMPLETED"/>
+  </eventConfigs>
+</nsProcess:Process>

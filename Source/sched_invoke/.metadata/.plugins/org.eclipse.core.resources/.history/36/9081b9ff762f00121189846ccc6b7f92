@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsProcess:Process xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:nsProcess="http://documentum.com/bpm/process" urn="urn:emc:com.emc.ide.artifact.process:Artifacts/Processes/query_for_processes.process" categoryId="com.emc.ide.artifact.process" name="query_for_processes" label="Query for Processes" synchronous="true">
+  <processData/>
+  <defaultSettings/>
+  <processUIInfo/>
+  <eventConfigs label="Workflow Started">
+    <triggerType type="PROCESS_WORKFLOW_STARTED"/>
+  </eventConfigs>
+  <eventConfigs label="Workflow changed state">
+    <triggerType type="PROCESS_WORKFLOW_CHANGESTATE"/>
+  </eventConfigs>
+  <eventConfigs label="Workflow Aborted">
+    <triggerType type="PROCESS_WORKFLOW_ABORTED"/>
+  </eventConfigs>
+  <eventConfigs label="Workflow completed">
+    <triggerType type="PROCESS_WORKFLOW_COMPLETED"/>
+  </eventConfigs>
+</nsProcess:Process>
